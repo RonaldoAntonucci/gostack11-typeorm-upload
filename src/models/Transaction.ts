@@ -4,7 +4,11 @@ import {
   Column,
   UpdateDateColumn,
   CreateDateColumn,
+  ManyToOne,
+  JoinColumn,
 } from 'typeorm';
+
+import Category from '../models/Category';
 
 @Entity({ name: 'transactions' })
 class Transaction {
@@ -28,6 +32,10 @@ class Transaction {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @ManyToOne(() => Category, category => category.transaction, { eager: true })
+  @JoinColumn({ name: 'category_id' })
+  category: Category;
 }
 
 export default Transaction;

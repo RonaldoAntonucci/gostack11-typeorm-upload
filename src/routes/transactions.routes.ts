@@ -3,7 +3,6 @@ import { getCustomRepository } from 'typeorm';
 import multer from 'multer';
 import path from 'path';
 
-import { pathToFileURL } from 'url';
 import uploadConfig from '../config/upload';
 
 import TransactionsRepository from '../repositories/TransactionsRepository';
