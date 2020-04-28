@@ -2,7 +2,7 @@ import csvParse from 'csv-parse';
 import fs from 'fs';
 
 interface DynamicObject {
-  [k: string]: string | number;
+  [k: string]: string;
 }
 export default async function loadCSV(
   filePath: string,
